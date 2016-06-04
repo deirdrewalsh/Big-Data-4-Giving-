@@ -1,4 +1,9 @@
 node_modules
 .DS-store
+<<<<<<< HEAD
 npm-debug.log
 dist
+=======
+dist
+npm-debug.log
+>>>>>>> fe-webpack

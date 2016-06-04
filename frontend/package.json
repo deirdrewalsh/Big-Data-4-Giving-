@@ -11,10 +11,12 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "live-server": "^1.0.0"
+    "webpack": "^1.13.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "webpack src/scripts/main.js dist/scripts/main.js && cp src/index.html dist/index.html",
+    "start": "http-server dist"
   },
   "repository": {
     "type": "git",
