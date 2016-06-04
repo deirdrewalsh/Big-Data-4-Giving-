@@ -1,5 +1,3 @@
-var L = require("leaflet");
-
 (function(){
   // Request Austin's lat and long
   var sdk = new CitySDK(); //Create the CitySDK Instance
