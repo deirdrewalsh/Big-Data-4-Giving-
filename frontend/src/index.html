@@ -3,60 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    
-    <style>
-      #map-austin {
-        height: 100vh;
-      }
-
-      #search {
-        position: absolute;
-        top: 10%;
-        right: 10%;
-        z-index: 1;
-      }
-
-      form a span {
-        color: black;
-        cursor: pointer;
-      }
-      
-      .form-control {
-        display: inline;
-        width: 90%;
-      }
-
-      #button-submit {
-        background: transparent;
-        border: none;
-        padding: 0;
-        display: inline;
-      }
-
-      .glyphicon-search {
-        display: inline;
-      }
-
-    </style>
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="container">
+
+    <br/>
+    <div class="container-fluid">
+        <div class="row">
+        	<h1 class="col-xs-4"></h1>
+        	<h1 class="col-xs-4" id="titleBar">Big Data Giving Map</h1>
+        	<h1 class="col-xs-4"></h1>
+        </div>
+        <br/>
+
+        <div class="row">
+        	<div class="col-xs-4"></div>
+        	<div class="col-xs-1" id="user1">User One</div>
+        	<div class="col-xs-2"></div>
+        	<div class="col-xs-1" id="user2">User Two</div>
+        	<div class="col-xs-4"></div>
+        </div>
+        <br/>
+    <div class="map-container">
+      <div id="map-austin" class="map"></div>
       <div id="search">
         <form action=".">
           <input type="text" name="Zip Code" placeholder="Zip Code" class="form-control">
           <button type="submit" class="btn" id="button-submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></button>
         </form>
       </div>
-      <div id="map-austin"></div>
+      <div class="btn-group filters" role="group">
+        <button id="education" type="button" class="btn btn-default"><span class="glyphicon glyphicon-apple"></span> Eductation</button>
+        <button id="housing" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Housing</button>
+        <button id="transportation" type="button" class="btn btn-default"><span class="glyphicon glyphicon-road"></span> Transportation</button>
+      </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/uscensusbureau/citysdk/Release1.1/js/citysdk.js"></script>
+    <script src="https://cdn.rawgit.com/uscensusbureau/citysdk/Release1.1/js/citysdk.census.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>
