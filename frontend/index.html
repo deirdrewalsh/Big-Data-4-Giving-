@@ -1,8 +1,47 @@
 <html>
-<head><title>Hi There </title>
+<head>
+
+  <title>Hi There </title>
+  
+
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
+  <!-- Leaflet JS -->
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
 </head>
 <body>
 
   We are serving from localhost!!!
+
+  <div id="map-austin"></div>
+
+  <script>
+  (function(){
+
+    var simpleMap = 
+
+      L.map('map-austin', {
+        center: [30.299886, -97.737296], 
+        zoom: 10
+      });
+
+      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        opacity: 1,
+        detectRetina: true
+      }).addTo(simpleMap);
+    
+  })();
+
+
+
+  </script>
 </body>
 </html>
