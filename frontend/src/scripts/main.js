@@ -3,4 +3,19 @@ var $ = require("jquery"),
     Backbone = require("backbone"),
     L = require("leaflet");
 
-console.log($("body").html(_.last([1, 2, 3, 4, 5])));
+
+(function(){
+
+  var simpleMap =
+
+    L.map('map-austin', {
+      center: [30.299886, -97.737296],
+      zoom: 10
+    });
+
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      opacity: 1,
+      detectRetina: true
+    }).addTo(simpleMap);
+
+})();
