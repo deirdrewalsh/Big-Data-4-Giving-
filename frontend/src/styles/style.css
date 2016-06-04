@@ -1,0 +1,21 @@
+.map-container {
+  position: relative;
+  height: 300px;
+}
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.filters {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.filters-list {
+  display: flex;
+  list-style: none;
+}
