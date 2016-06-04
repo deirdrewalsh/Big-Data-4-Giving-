@@ -3,15 +3,13 @@ import json
 
 from flask import Flask, Response, request
 
-BASE_URL = 'http://egis.hud.opendata.arcgis.com/datasets/%s.geojson?where=&geometry={"xmin":%f,"ymin":%f,"xmax":%f,"ymax":%f,"spatialReference":{"wkid":102100}}'
+from BigDataDBs import DB_map
 
-DATASETS = {
-    'poverty_index': 'a4d78dc882bb456da6200b574bfb9e12_0'
-}
+BASE_URL = 'http://egis.hud.opendata.arcgis.com/datasets/%s.geojson?where=&geometry={"xmin":%f,"ymin":%f,"xmax":%f,"ymax":%f,"spatialReference":{"wkid":102100}}'
 
 
 def bg_query(dataset, xmin, ymin, xmax, ymax):
-    url = BASE_URL % (DATASETS[dataset], xmin, ymin, xmax, ymax) 
+    url = BASE_URL % (DB_map[dataset], xmin, ymin, xmax, ymax) 
     print('Fetching data from: \n', url)
     res = urllib.request.urlopen(url)
     data = res.read()
