@@ -15,8 +15,12 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "img": "mkdir -p dist/imgs && cp -r src/imgs/ dist/imgs/",
     "css": "mkdir -p dist/styles && cp -r src/styles/ dist/styles/",
-    "prestart": "webpack src/scripts/main.js dist/scripts/main.js && cp src/index.html dist/index.html && npm run css",
+    "js": "webpack src/scripts/main.js dist/scripts/main.js",
+    "html": "cp src/index.html dist/index.html",
+    "build": "npm run js && npm run html && npm run css && npm run img",
+    "prestart": "npm run build",
     "start": "http-server dist"
   },
   "repository": {
