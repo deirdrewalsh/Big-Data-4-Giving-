@@ -1,2 +1,4 @@
 node_modules
 .DS-store
+npm-debug.log
+dist
