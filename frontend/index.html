@@ -1,13 +1,14 @@
 <html>
 <head>
 
-  <title>Hi There </title>
+  <title>Austin Affordable Housing Big Data Giving Map</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
 
   <!-- Leaflet JS -->
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css"/>
 
@@ -20,29 +21,39 @@
 </head>
 <body>
 
-  We are serving from localhost!!!
+    <br/>
+    <div class="container-fluid">
+        <div class="row">
+        	<div class="col-xs-4"></div>
+        	<div class="col-xs-8">Austin Affordable Housing Big Data Giving Map</div>
+        </div>
+        <br/>
 
-  <div id="map-austin"></div>
+    	<div id="map-austin"></div>
 
-  <script>
-  (function(){
+	</div>
 
-    var simpleMap = 
+	<br/><br/>
 
-      L.map('map-austin', {
-        center: [30.299886, -97.737296], 
-        zoom: 10
-      });
+	<script>
+	(function(){
 
-      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        opacity: 1,
-        detectRetina: true
-      }).addTo(simpleMap);
-    
-  })();
+		var simpleMap = 
+
+		L.map('map-austin', {
+		center: [30.299886, -97.737296], 
+		zoom: 10
+		});
+
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		opacity: 1,
+		detectRetina: true
+		}).addTo(simpleMap);
+
+	})();
 
 
 
-  </script>
+  	</script>
 </body>
 </html>
