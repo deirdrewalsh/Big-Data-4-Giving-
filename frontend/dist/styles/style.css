@@ -1,0 +1,84 @@
+body {
+	background: url('../imgs/background.jpg');
+	background-repeat:no-repeat;
+}
+
+#titleBar {
+    font-family: "Palatino Linotype", serif;
+	font-weight: bold;
+	color: darkblue;
+	background-color: gainsboro;
+	outline-color: lightgray;
+	padding: 1%;
+	text-align: center;
+	outline-style: double;
+	box-shadow: 0 0 8pt 5pt black;
+}
+
+#user1 {
+	font-family: "Palatino Linotype", serif;
+    color: darkblue;
+	background-color: gainsboro;
+	outline-color: lightgray;
+	padding: 1%;
+	text-align: center;
+	outline-style: double;
+	box-shadow: 0 0 8pt 5pt black;
+}
+
+#user2 {
+	font-family: "Palatino Linotype", serif;
+	color: darkblue;
+	background-color: gainsboro;
+	outline-color: lightgray;
+	padding: 1%;
+	text-align: center;
+	outline-style: double;
+	box-shadow: 0 0 8pt 5pt black;
+}
+.map-container {
+  position: relative;
+  height: 500px;
+}
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.filters {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+#search {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+form a span {
+  color: black;
+  cursor: pointer;
+}
+
+.form-control {
+  display: inline;
+  width: 90%;
+}
+
+#button-submit {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: inline;
+}
+
+.glyphicon-search {
+  display: inline;
+}
