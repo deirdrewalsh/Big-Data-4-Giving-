@@ -24,6 +24,7 @@
         </div>
       </div>
 
+      <button onclick="$('#charities').toggleClass('charities-panel--active')">Toggle</button>
       <div class="map-container">
         <div id="map-austin" class="map"></div>
         <div class="btn-group filters" role="group" data-step="1" data-intro="Pick your cause" data-position="top">
@@ -32,65 +33,63 @@
           <button id="housing" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Housing</button>
           <button id="transportation" type="button" class="btn btn-default"><span class="glyphicon glyphicon-road"></span> Transportation</button>
         </div>
-      </div>
-    </div>
+        <div id="charities" class=" charities-panel">
+          <h1>Recommended Charities</h1>
+          <div class="container ionic-grid">
+            <div class="button-group filter-button-group">
+              <button class="button is-checked" data-filter="*">All</button>
+              <button class="button" data-filter=".grid-item--education">Education</button>
+              <button class="button" data-filter=".grid-item--poverty">Poverty</button>
+            </div>
+            <div class="grid">
 
-    <script id="item-tpl" type="text/x-handlebars-template">
-    </script>
-
-    <div class="panel panel-default">
-      <h1>Recommended Charities</h1>
-        <div class="container ionic-grid">
-          <div class="button-group filter-button-group">
-            <button class="button is-checked" data-filter="*">All</button>
-            <button class="button" data-filter=".grid-item--education">Education</button>
-            <button class="button" data-filter=".grid-item--poverty">Poverty</button>
-          </div>
-          <div class="grid">
-
-            <div class="grid-item grid-item--technology">
-              <h4>Civic Spark</h4>
-              <div class="top-container">
+              <div class="grid-item grid-item--technology">
+                <h4>Civic Spark</h4>
+                <div class="top-container">
                   <img class="image" src="https://cdn.rawgit.com/jmeisel/galleryicons/master/civicspark.png?raw=true" alt="civicspark" style="width:100px;">
                   <div class="description">The CivicSpark App is for civic tech leaders and entrepreneurs to more easily find free or low-cost spaces in their local communities to meet, teach, and innovate</div>
-              </div>
+                </div>
 
-              <ul class="links">
-                <li>
-                  <a href="https://github.com/dssg/innovation-ecosystems">Dataset Collection and Exploration</a>
-                </li>
-              </ul>
-            </div>
-            <div class="grid-item grid-item--poverty">
-              <h4>Civic Spar Povertyk</h4>
-              <div class="top-container">
+                <ul class="links">
+                  <li>
+                    <a href="https://github.com/dssg/innovation-ecosystems">Dataset Collection and Exploration</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="grid-item grid-item--poverty">
+                <h4>Civic Spar Povertyk</h4>
+                <div class="top-container">
                   <img class="image" src="https://cdn.rawgit.com/jmeisel/galleryicons/master/civicspark.png?raw=true" alt="civicspark" style="width:100px;">
                   <div class="description">The CivicSpark App is for civic tech leaders and entrepreneurs to more easily find free or low-cost spaces in their local communities to meet, teach, and innovate</div>
-              </div>
+                </div>
 
-              <ul class="links">
-                <li>
-                  <a href="https://github.com/dssg/innovation-ecosystems">Dataset Collection and Exploration</a>
-                </li>
-              </ul>
-            </div>
-            <div class="grid-item grid-item--education">
-              <h4>Civic Spark Education</h4>
-              <div class="top-container">
+                <ul class="links">
+                  <li>
+                    <a href="https://github.com/dssg/innovation-ecosystems">Dataset Collection and Exploration</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="grid-item grid-item--education">
+                <h4>Civic Spark Education</h4>
+                <div class="top-container">
                   <img class="image" src="https://cdn.rawgit.com/jmeisel/galleryicons/master/civicspark.png?raw=true" alt="civicspark" style="width:100px;">
                   <div class="description">The CivicSpark App is for civic tech leaders and entrepreneurs to more easily find free or low-cost spaces in their local communities to meet, teach, and innovate</div>
+                </div>
+
+                <ul class="links">
+                  <li>
+                    <a href="https://github.com/dssg/innovation-ecosystems">Dataset Collection and Exploration</a>
+                  </li>
+                </ul>
               </div>
 
-              <ul class="links">
-                <li>
-                  <a href="https://github.com/dssg/innovation-ecosystems">Dataset Collection and Exploration</a>
-                </li>
-              </ul>
             </div>
-
           </div>
         </div>
+      </div>
     </div>
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

@@ -309,7 +309,8 @@ var data = [
 
   var $grid = $('.grid').isotope({
     itemSelector: '.grid-item',
-    stagger: 30
+    stagger: 30,
+    layoutMode: 'vertical'
   });
 
   $('.filter-button-group').on( 'click', '.button', function() {

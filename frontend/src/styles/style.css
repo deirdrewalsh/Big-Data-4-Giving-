@@ -8,13 +8,10 @@ img {
   color: #37465d;
 }
 
-#map-austin {
-  height: 100%;
-}
-
 .map-container {
   position: relative;
   height: 75vh;
+  overflow: hidden;
 }
 .map {
   position: absolute;
@@ -22,6 +19,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
+  height: 100%;
 }
 
 .filters {
@@ -75,6 +73,30 @@ form a span {
 
 body {
   font-family: sans-serif;
+}
+
+/* ---- panel ---- */
+.charities-panel {
+  background: #F8F8F8;
+  border-left: 1px solid #ccc;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 250ms ease-out;
+  padding: 10px;
+}
+
+.charities-panel--active {
+  transform: translateX(0);
+}
+
+.charities-container {
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 /* ---- button ---- */
@@ -135,11 +157,13 @@ body {
 .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
 .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
 
+
+
 /* ---- grid ---- */
 
 .grid {
-  background: #DDD;
-  max-width: 1200px;
+  max-width: 480px;
+  max-height: 80%;
 }
 
 /* clear fix */
@@ -153,11 +177,12 @@ body {
 
 .grid-item {
   float: left;
-  width: 100px;
-  height: 100px;
-  background: #0D8;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.7);
+  width: 100%;
+  background: none;
+  border-bottom: 1px solid #ccc;
+}
+.grid-item .image {
+  float: left;
 }
 
 .grid-item--red { background: #D00; }
