@@ -24,7 +24,6 @@
         </div>
       </div>
 
-      <button onclick="$('#charities').toggleClass('charities-panel--active')">Toggle</button>
       <div class="map-container">
         <div id="map-austin" class="map"></div>
         <div class="btn-group filters" role="group" data-step="1" data-intro="Pick your cause" data-position="top">
@@ -34,6 +33,7 @@
           <button id="transportation" type="button" class="btn btn-default"><span class="glyphicon glyphicon-road"></span> Transportation</button>
         </div>
         <div id="charities" class=" charities-panel">
+          <span class="glyphicon glyphicon-remove charities-close" role="button" onclick="$('#charities').removeClass('charities-panel--active')"></span>
           <h1>Recommended Charities</h1>
           <div class="container ionic-grid">
             <div class="button-group filter-button-group">

@@ -259,6 +259,7 @@ var data = [
 
       function zoomToFeature(e) {
         map.fitBounds(e.target.getBounds());
+        $('#charities').addClass('charities-panel--active');
       }
 
       function resetHighlight(feature) {
