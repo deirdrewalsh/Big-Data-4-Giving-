@@ -1,8 +1,8 @@
+introJs().start();
 (function(){
   // Request Austin's lat and long
   var sdk = new CitySDK(); //Create the CitySDK Instance
       census = sdk.modules.census; //Create an instance of the module
-
   census.enable("a51fa375e418f5da0f090186e7dc0bf849941772"); //Enable the module with the api key
 
   var request = {

@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link href="https://cdn.bootcss.com/intro.js/2.1.0/introjs.min.css" rel="stylesheet">
+
   </head>
   <body>
     <div class="container-fluid">
-      <div class="nav navbar navbar-default">
+      <div class="navbar navbar-default">
         <div class="container-fluid">
           <img src="favicon.jpg" alt="Impact Map Logo" class="navbar-left">
           <h1 class="navbar-text" style="color: #37465d">Impact Map</h1>
@@ -18,7 +20,7 @@
 
       <div class="map-container">
         <div id="map-austin" class="map"></div>
-        <div class="btn-group filters" role="group">
+        <div class="btn-group filters" role="group" data-step="1" data-intro="These are data sources" data-position="top">
           <button id="education" type="button" class="btn btn-default"><span class="glyphicon glyphicon-apple"></span> Education</button>
           <button id="housing" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Housing</button>
           <button id="transportation" type="button" class="btn btn-default"><span class="glyphicon glyphicon-road"></span> Transportation</button>
@@ -31,6 +33,7 @@
     <script src="https://cdn.rawgit.com/uscensusbureau/citysdk/Release1.1/js/citysdk.js"></script>
     <script src="https://cdn.rawgit.com/uscensusbureau/citysdk/Release1.1/js/citysdk.census.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="https://cdn.bootcss.com/intro.js/2.1.0/intro.min.js"></script>"
     <script src="scripts/main.js"></script>
   </body>
 </html>
