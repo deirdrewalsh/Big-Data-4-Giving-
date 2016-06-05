@@ -206,6 +206,8 @@ var data = [
   	id: 'drmaples.ipbindf8',
   }).addTo(simpleMap);
 
+  var geojson, legend;
+
   function loadDataset(dataset) {
     var bounds = simpleMap.getBounds();
     var convertedCoordsNortheast = Terraformer.Tools.positionToMercator([bounds._northEast.lng, bounds._northEast.lat]);
@@ -230,10 +232,9 @@ var data = [
     }
 
     var url = 'http://23.22.19.64:5000/query?xmin=' + xmin.toString() + '&xmax=' + xmax.toString() + '&ymin=' + ymin.toString() + '&ymax=' + ymax.toString() + '&dataset=' + dataset;
-    if (typeof geojson == 'defined') {
+    if (geojson != undefined) {
       simpleMap.removeLayer(geojson);
-      simpleMap.removeLayer(legend);
-      console.log(typeof geojson);
+      simpleMap.removeControl(legend);
     }
     $.getJSON(url, function(data) {
       console.log(data);
@@ -273,7 +274,7 @@ var data = [
         });
       }
 
-      var geojson = L.geoJson(data, {onEachFeature: onEachFeature, style: function(feature) {
+      geojson = L.geoJson(data, {onEachFeature: onEachFeature, style: function(feature) {
         var key = (dataset == 'Low Poverty') ? 'POV_IDX' : 'SCHL_IDX';
         return {
           fillColor: getColor(feature.properties[key]),
@@ -287,7 +288,7 @@ var data = [
 
       geojson.addTo(simpleMap);
 
-      var legend = L.control({position: 'topleft'});
+      legend = L.control({position: 'topleft'});
       legend.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'info legend');
         var grades = [99, 80, 65, 50, 35, 25, 13, 0];
