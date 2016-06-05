@@ -1,5 +1,5 @@
 img {
-    width:50px;
+    width:70px;
 }
 
 .navbar-text {
@@ -14,7 +14,7 @@ img {
 
 .map-container {
   position: relative;
-  height: 500px;
+  height: 300px;
 }
 .map {
   position: absolute;
