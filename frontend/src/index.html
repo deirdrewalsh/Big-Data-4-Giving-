@@ -24,27 +24,19 @@
         </div>
       </div>
 
-      <div class="map-container">
+      <div class="map-container ionic-grid">
         <div id="map-austin" class="map"></div>
-        <div class="btn-group filters" role="group" data-step="1" data-intro="Pick your cause" data-position="top">
-          <button id="poverty" type="button" class="btn btn-default"><span class="glyphicon glyphicon-piggy-bank"></span> Poverty</button>
-          <button id="education" type="button" class="btn btn-default"><span class="glyphicon glyphicon-apple"></span> Education</button>
-          <button id="housing" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Housing</button>
-          <button id="transportation" type="button" class="btn btn-default"><span class="glyphicon glyphicon-road"></span> Transportation</button>
+        <div class="btn-group filters button-group filter-button-group" role="group" data-step="1" data-intro="Pick your cause" data-position="top">
+          <button id="poverty" type="button" class="btn btn-default button" data-filter=".grid-item--education"><span class="glyphicon glyphicon-piggy-bank"></span> Poverty</button>
+          <button id="education" type="button" class="btn btn-default button" data-filter=".grid-item--poverty"><span class="glyphicon glyphicon-apple"></span> Education</button>
+          <button id="housing" type="button" class="btn btn-default button"><span class="glyphicon glyphicon-home"></span> Housing</button>
+          <button id="transportation" type="button" class="btn btn-default button"><span class="glyphicon glyphicon-road"></span> Transportation</button>
         </div>
         <div id="charities" class=" charities-panel">
           <span class="glyphicon glyphicon-remove charities-close" role="button" onclick="$('#charities').removeClass('charities-panel--active')"></span>
           <h1>Recommended Charities</h1>
-          <div class="container ionic-grid">
-            <div class="button-group filter-button-group">
-              <button class="button is-checked" data-filter="*">All</button>
-              <button class="button" data-filter=".grid-item--education">Education</button>
-              <button class="button" data-filter=".grid-item--poverty">Poverty</button>
-            </div>
+          <div class="container">
             <div class="grid">
-
-
-
               <div class="grid-item grid-item--poverty charity-item">
                 <h4>Civic Spar Povertyk</h4>
                 <div class="top-container">

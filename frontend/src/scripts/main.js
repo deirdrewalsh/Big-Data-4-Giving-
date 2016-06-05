@@ -230,7 +230,7 @@ var data = [
                       '#800026';
     }
 
-    var url = 'http://127.0.0.1:5000/query?xmin=' + xmin.toString() + '&xmax=' + xmax.toString() + '&ymin=' + ymin.toString() + '&ymax=' + ymax.toString() + '&dataset=' + dataset;
+    var url = 'http://23.22.19.64:5000/query?xmin=' + xmin.toString() + '&xmax=' + xmax.toString() + '&ymin=' + ymin.toString() + '&ymax=' + ymax.toString() + '&dataset=' + dataset;
     if (typeof geojson == 'defined') {
       simpleMap.removeLayer(geojson);
       simpleMap.removeLayer(legend);
