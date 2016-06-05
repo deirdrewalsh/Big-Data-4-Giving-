@@ -200,12 +200,13 @@ var data = [
       zoom: 14
     });
 
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      opacity: 1,
-      detectRetina: true
-    }).addTo(simpleMap);
+  L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+  	maxZoom: 18,
+  	attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://mapbox.com">Mapbox</a>',
+  	id: 'drmaples.ipbindf8',
+  }).addTo(simpleMap);
 
-  document.querySelector("#poverty").addEventListener("click", function () {
+  function loadDataset(dataset) {
     var bounds = simpleMap.getBounds();
     var convertedCoordsNortheast = Terraformer.Tools.positionToMercator([bounds._northEast.lng, bounds._northEast.lat]);
     var convertedCoordsSouthwest = Terraformer.Tools.positionToMercator([bounds._southWest.lng, bounds._southWest.lat]);
@@ -216,8 +217,6 @@ var data = [
     var ymin = convertedCoordsSouthwest[1];
     var xmax = convertedCoordsNortheast[0];
     var ymax = convertedCoordsNortheast[1];
-
-    var dataset = 'Low Poverty';
 
     function getColor(d) {
       return d > 99 ? '#FFEDA0' :
@@ -304,7 +303,9 @@ var data = [
       };
       legend.addTo(simpleMap);
     });
-  });
+  }
+  document.querySelector("#poverty").addEventListener("click", loadDataset.bind(this, 'Low Poverty'));
+  document.querySelector("#education").addEventListener("click", loadDataset.bind(this, 'School Proficiency'));
 
   // external js: isotope.pkgd.js
 
