@@ -20,8 +20,8 @@
 
   document.querySelector("#transportation").addEventListener("click", function () {
     var bounds = simpleMap.getBounds();
-    var convertedCoordsNortheast = Terraformer.Tools.positionToMercator([bounds._northEast.lng, bounds._northEast.lat])
-    var convertedCoordsSouthwest = Terraformer.Tools.positionToMercator([bounds._southWest.lng, bounds._southWest.lat])
+    var convertedCoordsNortheast = Terraformer.Tools.positionToMercator([bounds._northEast.lng, bounds._northEast.lat]);
+    var convertedCoordsSouthwest = Terraformer.Tools.positionToMercator([bounds._southWest.lng, bounds._southWest.lat]);
 
     console.log(convertedCoordsNortheast, convertedCoordsSouthwest);
 
@@ -50,7 +50,38 @@
         return;
       }
 
-      L.geoJson(data, {style: function(feature) {
+      function highlightFeature(feature) {
+        var layer = feature.target;
+
+        layer.setStyle({
+          weight: 5,
+          color: '#666',
+          dashArray: '',
+          fillOpacity: 0.7
+        });
+
+        if (!L.Browser.ie && !L.Browser.opera) {
+          layer.bringToFront();
+        }
+      }
+
+      function zoomToFeature(e) {
+        map.fitBounds(e.target.getBounds());
+      }
+
+      function resetHighlight(feature) {
+        geojson.resetStyle(feature.target);
+      }
+
+      function onEachFeature(feature, layer) {
+        layer.on({
+          mouseover: highlightFeature,
+          mouseout: resetHighlight,
+          click: zoomToFeature
+        });
+      }
+
+      var geojson = L.geoJson(data, {onEachFeature: onEachFeature, style: function(feature) {
         return {
           fillColor: getColor(feature.properties.POV_IDX),
           weight: 2,
@@ -59,25 +90,25 @@
           dashArray: '3',
           fillOpacity: 0.7
         };
-      }}).addTo(simpleMap);
+      }});
+
+      geoJson.addTo(simpleMap);
 
       var legend = L.control({position: 'bottomright'});
-
       legend.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 13, 25, 35, 50, 65, 80, 99],
-        labels = [];
+        var div = L.DomUtil.create('div', 'info legend');
+        var grades = [0, 13, 25, 35, 50, 65, 80, 99];
+        var labels = [];
 
         // loop through our density intervals and generate a label with a colored square for each interval
         for (var i = 0; i < grades.length; i++) {
           div.innerHTML +=
             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
             grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-        }
+        };
 
         return div;
       };
       legend.addTo(simpleMap);
-    });
   });
-})();
+})()
