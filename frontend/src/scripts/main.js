@@ -18,10 +18,10 @@
       detectRetina: true
     }).addTo(simpleMap);
 
-  document.querySelector("#transportation").addEventListener("click", function () {
+  document.querySelector("#poverty").addEventListener("click", function () {
     var bounds = simpleMap.getBounds();
-    var convertedCoordsNortheast = Terraformer.Tools.positionToMercator([bounds._northEast.lng, bounds._northEast.lat])
-    var convertedCoordsSouthwest = Terraformer.Tools.positionToMercator([bounds._southWest.lng, bounds._southWest.lat])
+    var convertedCoordsNortheast = Terraformer.Tools.positionToMercator([bounds._northEast.lng, bounds._northEast.lat]);
+    var convertedCoordsSouthwest = Terraformer.Tools.positionToMercator([bounds._southWest.lng, bounds._southWest.lat]);
 
     console.log(convertedCoordsNortheast, convertedCoordsSouthwest);
 
