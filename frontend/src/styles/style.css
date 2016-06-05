@@ -1,5 +1,5 @@
 img {
-    width:70px;
+    width:80px;
 }
 
 .navbar-text {
@@ -32,6 +32,10 @@ img {
 form a span {
   color: black;
   cursor: pointer;
+}
+
+.charity-item {
+  width: 300px;
 }
 
 .form-control {
@@ -79,7 +83,7 @@ body {
 .charities-panel {
   background: #F8F8F8;
   border-left: 1px solid #ccc;
-  width: 300px;
+  width: 450px;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -169,7 +173,7 @@ body {
 /* ---- grid ---- */
 
 .grid {
-  max-width: 480px;
+  max-width: 350px;
   max-height: 80%;
 }
 
@@ -184,12 +188,13 @@ body {
 
 .grid-item {
   float: left;
-  width: 100%;
+  width: 400px;
   background: none;
   border-bottom: 1px solid #ccc;
 }
 .grid-item .image {
   float: left;
+  margin: 5px;
 }
 
 .grid-item--red { background: #D00; }
