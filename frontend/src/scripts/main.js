@@ -70,7 +70,7 @@
       }
 
       function zoomToFeature(e) {
-        map.fitBounds(e.target.getBounds());
+        simpleMap.fitBounds(e.target.getBounds());
       }
 
       function resetHighlight(feature) {
