@@ -1,4 +1,4 @@
-introJs().start();
+introJs().setOption('showBullets', false).start();
 (function(){
   // Request Austin's lat and long
   var sdk = new CitySDK(); //Create the CitySDK Instance
