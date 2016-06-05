@@ -6,7 +6,8 @@ DB_map = {'Low Poverty' : 'a4d78dc882bb456da6200b574bfb9e12_0',
           'Location Affordability' : '27b53ea69f98474eb002ac3b9c6b51eb_0',
           'Fair Market Rents' : '24af423b6a5c4c09b82df1f7d39cccd2_0',
           'Jobs Proximity' : '636ecbfb0ee5480ea5b68e65991e4815_0',
-          'Low Income Housing Tax Credit Properties' : '9bbb7cde9fc74d91b444d03e5887ea1e_0'}
+          'Low Income Housing Tax Credit Properties' : '9bbb7cde9fc74d91b444d03e5887ea1e_0',
+          'School Proficiency': '70e2ed8dcb6c47ffa3414c275f62b72b_0'}
 
 def bg_db_names():
     return DB_map.keys()
