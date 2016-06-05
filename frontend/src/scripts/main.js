@@ -196,8 +196,8 @@ var data = [
   // Create map
   var simpleMap =
     L.map('map-austin', {
-      center: [30.25, -97.75],
-      zoom: 13
+      center: [30.2665301, -97.7407723],
+      zoom: 14
     });
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -258,7 +258,7 @@ var data = [
       }
 
       function zoomToFeature(e) {
-        map.fitBounds(e.target.getBounds());
+        simpleMap.fitBounds(e.target.getBounds());
         $('#charities').addClass('charities-panel--active');
       }
 
@@ -287,7 +287,7 @@ var data = [
 
       geojson.addTo(simpleMap);
 
-      var legend = L.control({position: 'bottomright'});
+      var legend = L.control({position: 'topleft'});
       legend.onAdd = function(map) {
         var div = L.DomUtil.create('div', 'info legend');
         var grades = [99, 80, 65, 50, 35, 25, 13, 0];
