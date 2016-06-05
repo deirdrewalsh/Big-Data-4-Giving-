@@ -24,6 +24,7 @@
         </div>
       </div>
 
+      <button onclick="$('#charities').toggleClass('charities-panel--active')">Toggle</button>
       <div class="map-container">
         <div id="map-austin" class="map"></div>
         <div class="btn-group filters" role="group" data-step="1" data-intro="Pick your cause" data-position="top">
@@ -32,49 +33,51 @@
           <button id="housing" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Housing</button>
           <button id="transportation" type="button" class="btn btn-default"><span class="glyphicon glyphicon-road"></span> Transportation</button>
         </div>
+
+        <div id="charities" class=" charities-panel">
+          <h1>Recommended Charities</h1>
+            <div class="ionic-grid">
+              <div class="button-group filter-button-group">
+                <button class="button is-checked" data-filter="*">All</button>
+                <button class="button" data-filter=".grid-item--red">Red</button>
+                <button class="button" data-filter=".grid-item--blue">Blue</button>
+              </div>
+              <div class="charities-container">
+                <div class="grid">
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--blue"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--blue"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--blue"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--blue"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--blue"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--blue"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--blue"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--blue"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                  <div class="grid-item grid-item--red"></div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
 
-    <div class="panel panel-default">
-      <h1>Recommended Charities</h1>
-        <div class="container ionic-grid">
-          <div class="button-group filter-button-group">
-            <button class="button is-checked" data-filter="*">All</button>
-            <button class="button" data-filter=".grid-item--red">Red</button>
-            <button class="button" data-filter=".grid-item--blue">Blue</button>
-          </div>
-
-          <div class="grid">
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--blue"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--blue"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--blue"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--blue"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--blue"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--blue"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--blue"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--blue"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-            <div class="grid-item grid-item--red"></div>
-          </div>
-        </div>
-    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
