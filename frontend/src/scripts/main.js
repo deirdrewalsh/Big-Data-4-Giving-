@@ -1,7 +1,7 @@
 (function(){
   if (!document.cookie.match("visited=true")) {
     introJs().setOption('showBullets', false).start();
-    // document.cookie = "visited=true";
+    document.cookie = "visited=true";
   }
 
   var simpleMap =
