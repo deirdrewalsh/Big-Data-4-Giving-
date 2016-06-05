@@ -14,13 +14,19 @@
       <div class="navbar navbar-default">
         <div class="container-fluid">
           <img src="favicon.jpg" alt="Impact Map Logo" class="navbar-left">
-          <h1 class="navbar-text" style="color: #37465d">Impact Map</h1>
+          <h1 class="navbar-text" style="color: #37465d">Impact Map
+            <span class="h6 block">Make Smarter, Local Giving Decisions Based on Actual Need and Real Data</span>
+          </h1>
+          <ul class="nav navbar-nav navbar-right nav-buttons">
+            <li><a href="/about.html" class="h4">About</a></li>
+            <li><a href="javascript:void(0)" onclick="javascript:introJs().setOption('showBullets', false).start()" class="h4" data-step="2" data-intro="Click here to see these tooltips again">Help</a></li>
+          </ul>
         </div>
       </div>
 
       <div class="map-container">
         <div id="map-austin" class="map"></div>
-        <div class="btn-group filters" role="group" data-step="1" data-intro="Pick Your Cause" data-position="top">
+        <div class="btn-group filters" role="group" data-step="1" data-intro="Pick your cause" data-position="top">
           <button id="poverty" type="button" class="btn btn-default"><span class="glyphicon glyphicon-piggy-bank"></span> Poverty</button>
           <button id="education" type="button" class="btn btn-default"><span class="glyphicon glyphicon-apple"></span> Education</button>
           <button id="housing" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Housing</button>
