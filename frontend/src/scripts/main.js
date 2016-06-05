@@ -274,8 +274,9 @@ var data = [
       }
 
       var geojson = L.geoJson(data, {onEachFeature: onEachFeature, style: function(feature) {
+        var key = (dataset == 'Low Poverty') ? 'POV_IDX' : 'SCHL_IDX';
         return {
-          fillColor: getColor(feature.properties.POV_IDX),
+          fillColor: getColor(feature.properties[key]),
           weight: 2,
           opacity: 1,
           color: 'white',
