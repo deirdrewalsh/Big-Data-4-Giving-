@@ -1,15 +1,11 @@
 img {
-    width:110%;
+    width:50px;
 }
 
-#titleBar {
-    font-family: "Palatino Linotype", serif;
+.navbar-text {
+  font-family: "Palatino Linotype", serif;
   font-weight: bold;
-  background-color: #37465d;
-  color: white;
-  padding: 0px 0px 6px 0px;
-  text-align: center;
-  border-radius: 10px;
+  color: #37465d;
 }
 
 #map-austin {
