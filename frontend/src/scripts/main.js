@@ -1,5 +1,9 @@
 (function(){
-  introJs().setOption('showBullets', false).start();
+  if (!document.cookie.match("visited=true")) {
+    introJs().setOption('showBullets', false).start();
+    // document.cookie = "visited=true";
+  }
+
   var simpleMap =
     L.map('map-austin', {
       center: [30.25, -97.75],
@@ -11,3 +15,11 @@
       detectRetina: true
     }).addTo(simpleMap);
 })();
+
+function test () {
+
+}
+
+var test = () => {
+
+};
