@@ -213,10 +213,10 @@ var data = [
 
     console.log(convertedCoordsNortheast, convertedCoordsSouthwest);
 
-    var xmin = convertedCoordsSouthwest[0];
-    var ymin = convertedCoordsSouthwest[1];
-    var xmax = convertedCoordsNortheast[0];
-    var ymax = convertedCoordsNortheast[1];
+    var xmin = -10885292.097177874;
+    var ymin = 3534964.13784741;
+    var xmax = -10875622.813099798;
+    var ymax = 3540754.2427400113;
 
     function getColor(d) {
       return d > 99 ? '#FFEDA0' :
