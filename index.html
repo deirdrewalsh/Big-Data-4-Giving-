@@ -1,64 +1,159 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Big Data 4 Giving by deirdrewalsh</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link href="https://cdn.bootcss.com/intro.js/2.1.0/introjs.min.css" rel="stylesheet">
+
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Big Data 4 Giving</h1>
-      <h2 class="project-tagline">Helping corporations make data-based giving decisions</h2>
-      <a href="https://github.com/deirdrewalsh/Big-Data-4-Giving-" class="btn">View on GitHub</a>
-      <a href="https://github.com/deirdrewalsh/Big-Data-4-Giving-/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/deirdrewalsh/Big-Data-4-Giving-/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <div class="container-fluid">
+      <div class="navbar navbar-default">
+        <div class="container-fluid">
+          <img src="favicon.jpg" alt="Impact Map Logo" class="navbar-left">
+          <h1 class="navbar-text" style="color: #37465d">Impact Map</h1>
+          <ul class="nav navbar-nav navbar-right nav-buttons">
+            <li><a href="https://docs.google.com/document/d/1evXo6GXHrwjrgFVKBKrNE9SIntpzkEeU96AFqf3f9Mk/edit" class="h4">About</a></li>
+            <li><a href="javascript:void(0)" onclick="javascript:introJs().setOption('showBullets', false).start()" class="h4" data-step="2" data-intro="Click here to see these tooltips again">Help</a></li>
+          </ul>
+        </div>
+      </div>
+        <div><h4>Make Smarter, Local Giving Decisions Based on Actual Need and Real Data</h4></div>
+      <div class="map-container ionic-grid">
+        <div id="map-austin" class="map"></div>
+        <div class="btn-group filters button-group filter-button-group" role="group" data-step="1" data-intro="Pick your cause" data-position="top">
+          <button id="poverty" type="button" class="btn btn-default button" data-filter=".grid-item--poverty"><span class="glyphicon glyphicon-piggy-bank"></span> Poverty</button>
+          <button id="education" type="button" class="btn btn-default button" data-filter=".grid-item--education"><span class="glyphicon glyphicon-apple"></span> Education</button>
+          <button id="housing" type="button" class="btn btn-default button"><span class="glyphicon glyphicon-home"></span> Housing</button>
+          <button id="transportation" type="button" class="btn btn-default button"><span class="glyphicon glyphicon-road"></span> Transportation</button>
+        </div>
+        <div id="charities" class=" charities-panel">
+          <span class="glyphicon glyphicon-remove charities-close" role="button" onclick="$('#charities').removeClass('charities-panel--active')"></span>
+          <h1>Recommended Charities</h1>
+          <div class="container">
+            <div class="grid">
+              <div class="grid-item grid-item--poverty charity-item">
+                <h4>Caritas of Austin</h4>
+                <div class="top-container">
+                  <img class="image" src="/imgs/poverty1.png" alt="civicspark" style="width:100px;">
+                  <div class="description">Description: Caritas of Austin provides a service continuum for those experiencing poverty that begins with a safety net and links them to resources to achieve self-sufficiency.
+                    <a href="www.caritasofaustin.org/">Website.</a><br>
+                    <a href="http://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=11862">Charity Navigator</a>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item grid-item--poverty charity-item">
+                <h4>CASA of Travis County</h4>
+                <div class="top-container">
+                  <img class="image" src="/imgs/poverty2.png" alt="civicspark" style="width:100px;">
+                  <div class="description">Description: CASA of Travis County speaks up for children who’ve been abused or neglected by empowering our community to volunteer as advocates for them in the court system.
+                    <a href="http://www.casatravis.org/">Website.</a><br>
+                    <a href="http://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=12612">Charity Navigator</a>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item grid-item--poverty charity-item">
+                <h4>El Buen Samaritano</h4>
+                <div class="top-container">
+                  <img class="image" src="/imgs/poverty3.png" alt="civicspark" style="width:100px;">
+                  <div class="description">Description: El Buen Samaritano is an outreach ministry of the Episcopal Diocese of Texas committed to helping Latino and other families in Central Texas lead healthy, productive and secure lives through high-quality and affordable healthcare, education and financial security services.
+                    <a href="https://www.elbuen.org/">Website.</a><br>
+                    <a href="http://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=14815">Charity Navigator</a>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item grid-item--poverty charity-item">
+                <h4>Central Texas Food Bank</h4>
+                <div class="top-container">
+                  <img class="image" src="/imgs/poverty4.png" alt="civicspark" style="width:100px;">
+                  <div class="description">Description: The largest hunger-relief charity in Texas, providing 26 million meals per year.
+                    <a href="http://www.centraltexasfoodbank.org/">Website.</a><br>
+                    <a href="http://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=3420">Charity Navigator</a>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item grid-item--poverty charity-item">
+                <h4>Meals on Wheels and More</h4>
+                <div class="top-container">
+                  <img class="image" src="/imgs/poverty5.png" alt="civicspark" style="width:100px;">
+                  <div class="description">Description: Seeks to nourish and enrich the lives of the homebound and other people in need through programs that promote dignity and independent living.
+                    <a href="http://www.mealsonwheelsandmore.org/">Website.</a><br>
+                    <a href="http://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=8741">Charity Navigator</a>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item grid-item--education charity-item">
+                <h4>little helping hands</h4>
+                <div class="top-container">
+                  <img class="image" src="/imgs/education1.png" alt="little helping hands" style="width:100px;">
+                  <div class="description">Description: We facilitate family volunteering by organizing and leading volunteer activities suitable for kids as young as 3 years of age.
+                    <a href="http://littlehelpinghands.org/">Website.</a><br>
+                    <a href="http://www.charitynavigator.org/index.cfm?bay=search.profile&ein=270452295">Charity Navigator</a>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item grid-item--education charity-item">
+                <h4>Austin Partners in Education</h4>
+                <div class="top-container">
+                  <img class="image" src="/imgs/education2.png" alt="civicspark" style="width:100px;">
+                  <div class="description">Description: Focusing on Austin ISD’s schools located in under-resourced communities and serving predominantly economically disadvantaged students, Austin Partners in Education delivers innovative, volunteer-driven academic and mentoring programs.
+                    <a href="http://www.austinpartners.org">Website.</a><br>
+                    <a href="http://www.charitynavigator.org/index.cfm?bay=search.profile&ein=201024501">Charity Navigator</a>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item grid-item--education charity-item">
+               <h4>knowbility</h4>
+               <div class="top-container">
+                 <img class="image" src="/imgs/education3.png" alt="knowbility" style="width:100px;">
+                 <div class="description">Description: Our mission is to support the independence of children and adults with disabilities by promoting the use and improving the availability of accessible information technology.
+                   <a href="http://www.knowbility.org/">Website.</a><br>
+                   <a href="http://www.charitynavigator.org/index.cfm?bay=search.profile&ein=742902291">Charity Navigator</a>
+                 </div>
+               </div>
+             </div>
+             <div class="grid-item grid-item--education charity-item">
+               <h4>Learning and Tutoring Center of East Austin</h4>
+               <div class="top-container">
+                 <img class="image" src="/imgs/education4.png" alt="Today's readers are tomorrow's leaders" style="width:100px;">
+                 <div class="description">Established in 2007 for the purpose of providing free tutorial services to help children in academic subjects such as reading and mathematics.
+                   <a href="http://www.learningandtutoringcenter.org/">Website.</a><br>
+                   <a href="http://www.charitynavigator.org/index.cfm?bay=search.profile&ein=261890074">Charity Navigator</a>
+                 </div>
+               </div>
+             </div>
+             <div class="grid-item grid-item--education charity-item">
+               <h4>Southwest Key Programs</h4>
+               <div class="top-container">
+                 <img class="image" src="/imgs/education5.png" alt="Southwest Key Programs" style="width:100px;">
+                 <div class="description">Description: A national nonprofit organization committed to keeping kids out of institutions and home with their families, in their communities.
+                   <a href="http://www.swkey.org/">Website.</a><br>
+                   <a href="http://www.charitynavigator.org/index.cfm?bay=search.profile&ein=742481167">Charity Navigator</a>
+                 </div>
+               </div>
+             </div>
 
-    <section class="main-content">
-      <h3>
-<a id="smart-giving" class="anchor" href="#smart-giving" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Smart Giving</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 
-<p>This project aims to provide community-level data to donors and organizations that provide services. Started at ATXHack4Change 2016, we take census data to identify areas of need in our city to allow donors and non-profits to make informed decisions on how their dollars and efforts can impact our community. The initial product focuses on the city of Austin, Texas and census data on poverty. </p>
 
-<p>Started with low poverty index.</p>
-
-<h3>
-<a id="backend-need-to-know" class="anchor" href="#backend-need-to-know" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Backend need-to-know</h3>
-
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
-
-<p>Should be familiar with US census bureau and HUD (housing and urban development), make calls and grab data to put it on a map.
-HUD arcgis server is a bit difficult to work with compared to other systems, the spatial reference system that they use (esri) is not the same as typical latitude and longitude coordinates. </p>
-
-<p>Creating a backend to interact with the HUD API directly (7 separate data bases) so that the front-end can more easily retrieve information from a variety of databases.</p>
-
-<p>Still trying to figure out how to convert between esri and wgs84. Looking at using terraformer library.</p>
-
-<h3>
-<a id="front-end-need-to-know" class="anchor" href="#front-end-need-to-know" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Front end need-to-know</h3>
-
-<p>Understanding of Leaflet and Javascript to build a front end to visualize the data on the map, </p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>Original project was championed at the hackathon by <a href="https://github.com/deirdrewalsh" class="user-mention">@deirdrewalsh</a>. Contributors were </p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/deirdrewalsh/Big-Data-4-Giving-">Big Data 4 Giving</a> is maintained by <a href="https://github.com/deirdrewalsh">deirdrewalsh</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdn.rawgit.com/uscensusbureau/citysdk/Release1.1/js/citysdk.js"></script>
+    <script src="https://cdn.rawgit.com/uscensusbureau/citysdk/Release1.1/js/citysdk.census.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="https://cdn.bootcss.com/intro.js/2.1.0/intro.min.js"></script>
+    <script src="http://cdn-geoweb.s3.amazonaws.com/terraformer/1.0.4/terraformer.min.js"></script>
+    <script src="https://npmcdn.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
