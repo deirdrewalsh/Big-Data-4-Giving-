@@ -1,7 +1,9 @@
-import urllib.request
+from __future__ import print_function
+import urllib2
 import json
 
 from flask import Flask, Response, request
+from flask_cors import CORS, cross_origin
 
 from BigDataDBs import DB_map
 
@@ -11,7 +13,7 @@ BASE_URL = 'http://egis.hud.opendata.arcgis.com/datasets/%s.geojson?where=&geome
 def bg_query(dataset, xmin, ymin, xmax, ymax):
     url = BASE_URL % (DB_map[dataset], xmin, ymin, xmax, ymax) 
     print('Fetching data from: \n', url)
-    res = urllib.request.urlopen(url)
+    res = urllib2.urlopen(url)
     data = res.read()
     # second read acts as wait for 1st read to finish
     res.read()
@@ -20,9 +22,12 @@ def bg_query(dataset, xmin, ymin, xmax, ymax):
 
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/query')
+@cross_origin()
 def query():
     xmin = request.args.get('xmin')
     ymin = request.args.get('ymin')
