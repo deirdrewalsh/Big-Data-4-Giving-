@@ -231,7 +231,7 @@ var data = [
                       '#800026';
     }
 
-    var url = 'http://23.22.19.64:5000/query?xmin=' + xmin.toString() + '&xmax=' + xmax.toString() + '&ymin=' + ymin.toString() + '&ymax=' + ymax.toString() + '&dataset=' + dataset;
+    var url = 'https://ii1i314hq0.execute-api.us-east-1.amazonaws.com/prod/query?xmin=' + xmin.toString() + '&xmax=' + xmax.toString() + '&ymin=' + ymin.toString() + '&ymax=' + ymax.toString() + '&dataset=' + dataset;
     if (geojson != undefined) {
       simpleMap.removeLayer(geojson);
       simpleMap.removeControl(legend);
