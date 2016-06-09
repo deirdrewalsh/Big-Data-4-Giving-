@@ -9,9 +9,3 @@ DB_map = {'Low Poverty' : 'a4d78dc882bb456da6200b574bfb9e12_0',
           'Low Income Housing Tax Credit Properties' : '9bbb7cde9fc74d91b444d03e5887ea1e_0',
           'School Proficiency': '70e2ed8dcb6c47ffa3414c275f62b72b_0'}
 
-def bg_db_names():
-    return DB_map.keys()
-
-def bg_db_keys(db_name):
-    return DB_map[db_name]
-
